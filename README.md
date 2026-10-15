@@ -15,7 +15,7 @@ npm run dev
 
 Run `npm run check` before submitting changes. It runs strict TypeScript checks, type-aware ESLint with zero warnings allowed, Vitest tests, and a production build. CI runs the same checks on pull requests and pushes to main. The lockfile is committed for reproducible installs. The development server binds to localhost.
 
-`npm run build` emits static files to `dist/`; `npm run preview` previews that build locally. Relative asset paths support subdirectory hosting. There are no runtime dependencies or backend services. Build-time environment values are public if bundled; never add secrets.
+`npm run build` emits one self-contained `dist/index.html` with CSS and JavaScript included; `npm run preview` previews it locally. Open the HTML directly in a modern browser or serve it on static hosting. There are no runtime dependencies or backend services. Build-time environment values are public if bundled; never add secrets.
 
 Edit `src/config/site.ts` to select the catalog and theme. Vite handles bundling, TypeScript enforces strict types, and ESLint checks unsafe operations and unhandled promises. Vitest covers configuration and checkout URL validation only; UI changes receive a brief manual browser check, without a UI behavior-test framework. There is no UI framework or personal-data form.
 
@@ -40,4 +40,4 @@ Edit `src/config/site.ts` to select the catalog and theme. Vite handles bundling
 
 Repository visibility is private. Deployment and any visibility changes require a separate decision.
 
-The intended final handoff is a lightweight, self-contained HTML file. Single-file packaging is tracked in #7; the current build still requires the complete `dist/` directory.
+The handoff is `dist/index.html` (approximately 11 KB with the starter configuration). CI publishes it as the `contribute-html` artifact. No runtime CDN or package installation is required; checkout still needs internet access.

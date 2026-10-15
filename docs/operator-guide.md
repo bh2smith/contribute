@@ -38,11 +38,11 @@ An invalid catalog shows an unavailable page. An invalid or unsupported checkout
 
 ## Compiled handoff and hosting
 
-The intended handoff is a lightweight compiled deliverable, preferably **one self-contained HTML file** with bundled CSS and JavaScript. It must remain fully client-side and require no runtime CDN, package installation, or application server. Packaging that single-file artifact is tracked in #7 and has not yet been implemented.
+The handoff is **`dist/index.html`**, a lightweight self-contained HTML file with CSS and JavaScript included. Send that file to the recipient, or download the `contribute-html` artifact from a successful GitHub Actions run. No Node.js, runtime CDN, package installation, or application server is required by the recipient.
 
-**Today**, `npm run build` produces `dist/index.html` plus `dist/assets/`. Keep the entire directory together; sending only the current `index.html` will omit required assets. Preview it through a static server rather than assuming it works when opened directly from disk.
+Open the file directly in a modern browser or serve it from static hosting at the chosen root or subdirectory. The build uses a small Node-only packaging step and fails if unexpected extra files remain, preventing an incomplete handoff when assets are added later. System fonts need no downloads. If adding images or fonts, embed them rather than introducing external files.
 
-For a conventional static host, serve the contents of `dist/` at the chosen root or subdirectory. Relative asset paths support subdirectory hosting. No server-side routing, database, secret environment variables, or build runtime is required on the host. A CMS that strips scripts is not equivalent to static hosting; confirm the recipient's embedding constraints before final packaging. A strict content-security policy may also need an agreed approach for inlined assets.
+A CMS that strips scripts is not equivalent to static hosting; confirm the recipient's embedding constraints before final packaging. A strict content-security policy may also need an agreed approach for inlined assets.
 
 Deploy only after the release decision; keep the GitHub repository private. Hosted checkout still needs an internet connection even if the final catalog is delivered as one local HTML file. Configuration changes require a rebuild and replacement of the compiled deliverable. Retain the previous deliverable for rollback.
 
