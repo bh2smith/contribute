@@ -2,7 +2,7 @@
 
 A generic, client-side, configuration-driven application for presenting memberships, donations, and recurring payment offerings through hosted checkout.
 
-**Status: foundation in development.** A static Vite + TypeScript shell is implemented. Offering configuration and hosted-checkout integration follow in the issue backlog.
+**Status: in development.** The static Vite + TypeScript shell, offering configuration validation, and hosted-checkout resolver are implemented. Configuration-driven catalog rendering follows in the issue backlog.
 
 ## Development
 
@@ -31,6 +31,7 @@ The initial shell has an empty state only, with no payment links or data-entry f
 - [Implementation plan](PLAN.md)
 - [Architecture](docs/architecture.md)
 - [Offering configuration](docs/configuration.md)
+- [Hosted-checkout providers](docs/providers.md)
 - [Architecture decisions](docs/adr/)
 - [Implementation issues](https://github.com/bh2smith/contribute/issues)
 

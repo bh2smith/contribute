@@ -2,7 +2,7 @@
 
 `parseCatalogConfig(unknown)` in `src/core/config.ts` validates JSON-shaped public configuration. It returns either `{ success: true, config }` or `{ success: false, issues }`; each issue contains a field path and a corrective message. Invalid input never returns a partially usable catalog. Validation does not coerce values or echo input values in errors.
 
-The schema and parser have no runtime dependencies. The UI is not wired to configuration yet; catalog rendering and provider navigation follow in issues #3 and #4.
+The schema and parser have no runtime dependencies. The UI is not wired to configuration yet; catalog rendering follows in issue #4. The [provider resolver](providers.md) validates checkout destinations separately.
 
 ## Fields
 
