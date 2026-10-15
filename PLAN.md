@@ -1,6 +1,6 @@
 # Implementation plan
 
-The static foundation (#1) and configuration validation (#2) are complete. The hosted-checkout provider layer (#3) is implemented next, followed by catalog rendering (#4). Issues are the source of truth for progress; milestones have no committed delivery dates. Deferred requirements are tracked in issue #7.
+The static foundation (#1) and configuration validation (#2) are complete. The provider layer (#3) is complete; catalog rendering and themes (#4) are the current increment. Issues are the source of truth for progress; milestones have no committed delivery dates. Deferred requirements are tracked in issue #7.
 
 ## Milestone 1: Static catalog foundation
 
@@ -12,7 +12,7 @@ The static foundation (#1) and configuration validation (#2) are complete. The h
 
 4. Build an accessible catalog and CSS theme system. Keep provider details out of presentation components.
 5. Add generic examples and operator documentation. Explain configuration, themes, Stripe setup, and static hosting without deploying.
-6. Verify checkout boundaries, accessibility, and privacy. Test configured destinations and document manual checks using test-mode links.
+6. Verify checkout boundaries, accessibility, and privacy. Keep automated tests focused on configuration and destination validation; use brief manual browser checks for UI behavior, accessibility, and responsive layout.
 
 ## Dependencies and scope
 

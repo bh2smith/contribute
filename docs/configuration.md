@@ -2,7 +2,7 @@
 
 `parseCatalogConfig(unknown)` in `src/core/config.ts` validates JSON-shaped public configuration. It returns either `{ success: true, config }` or `{ success: false, issues }`; each issue contains a field path and a corrective message. Invalid input never returns a partially usable catalog. Validation does not coerce values or echo input values in errors.
 
-The schema and parser have no runtime dependencies. The UI is not wired to configuration yet; catalog rendering follows in issue #4. The [provider resolver](providers.md) validates checkout destinations separately.
+The schema and parser have no runtime dependencies. The UI validates the catalog selected in `src/config/site.ts` before rendering; invalid configuration shows an unavailable state. The [provider resolver](providers.md) validates checkout destinations separately.
 
 ## Fields
 
@@ -33,4 +33,4 @@ No customer fields or secret-key fields are supported. Query parameters and frag
 
 ## Examples
 
-`src/config/example.ts` contains generic annual membership, one-time donation, and monthly donation examples. All URLs use `example.com` placeholders and cannot accept payments. Replace them with validated provider links before enabling checkout. Examples are not loaded into the application bundle.
+`src/config/example.ts` contains generic annual membership, one-time donation, and monthly donation examples. All URLs use `example.com` placeholders and cannot accept payments. Replace them with validated provider links before enabling checkout. The starter site imports these examples so the catalog can be previewed without enabling payments. Replace the selected configuration in `src/config/site.ts` for a real consumer.

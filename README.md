@@ -2,7 +2,7 @@
 
 A generic, client-side, configuration-driven application for presenting memberships, donations, and recurring payment offerings through hosted checkout.
 
-**Status: in development.** The static Vite + TypeScript shell, offering configuration validation, and hosted-checkout resolver are implemented. Configuration-driven catalog rendering follows in the issue backlog.
+**Status: in development.** The configuration-driven catalog, validated hosted-checkout links, and two CSS themes are implemented. Starter links are placeholders and remain unavailable until configured.
 
 ## Development
 
@@ -17,7 +17,7 @@ Run `npm run check` before submitting changes. It runs strict TypeScript checks,
 
 `npm run build` emits static files to `dist/`; `npm run preview` previews that build locally. Relative asset paths support subdirectory hosting. There are no runtime dependencies or backend services. Build-time environment values are public if bundled; never add secrets.
 
-The initial shell has an empty state only, with no payment links or data-entry forms. Vite handles bundling, TypeScript enforces strict types, ESLint checks unsafe operations and unhandled promises, and Vitest uses a DOM environment for UI tests. No UI framework is needed for the initial catalog.
+Edit `src/config/site.ts` to select the catalog and theme. Vite handles bundling, TypeScript enforces strict types, and ESLint checks unsafe operations and unhandled promises. Vitest covers configuration and checkout URL validation only; UI changes receive a brief manual browser check, without a UI behavior-test framework. There is no UI framework or personal-data form.
 
 ## Principles
 
@@ -32,6 +32,7 @@ The initial shell has an empty state only, with no payment links or data-entry f
 - [Architecture](docs/architecture.md)
 - [Offering configuration](docs/configuration.md)
 - [Hosted-checkout providers](docs/providers.md)
+- [CSS themes](docs/themes.md)
 - [Architecture decisions](docs/adr/)
 - [Implementation issues](https://github.com/bh2smith/contribute/issues)
 

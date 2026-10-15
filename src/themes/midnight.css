@@ -1,0 +1,10 @@
+.catalog[data-theme="midnight"] {
+  --catalog-background: #111d2e;
+  --catalog-surface: #1a2a40;
+  --catalog-text: #f1f5fa;
+  --catalog-muted: #bccbdd;
+  --catalog-border: #52677f;
+  --catalog-accent: #b8e4ce;
+  --catalog-on-accent: #142c22;
+  --catalog-focus: #ffd18a;
+}
