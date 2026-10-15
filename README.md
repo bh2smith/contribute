@@ -30,6 +30,7 @@ The initial shell has an empty state only, with no payment links or data-entry f
 
 - [Implementation plan](PLAN.md)
 - [Architecture](docs/architecture.md)
+- [Offering configuration](docs/configuration.md)
 - [Architecture decisions](docs/adr/)
 - [Implementation issues](https://github.com/bh2smith/contribute/issues)
 

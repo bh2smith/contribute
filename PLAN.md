@@ -1,6 +1,6 @@
 # Implementation plan
 
-Implementation has begun with the static foundation in issue #1. Issues are the source of truth for progress; milestones have no committed delivery dates. Deferred requirements are tracked in issue #7.
+The static foundation in issue #1 is complete. Configuration validation in issue #2 is the next implementation increment. Issues are the source of truth for progress; milestones have no committed delivery dates. Deferred requirements are tracked in issue #7.
 
 ## Milestone 1: Static catalog foundation
 
