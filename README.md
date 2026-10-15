@@ -34,6 +34,7 @@ Edit `src/config/site.ts` to select the catalog and theme. Vite handles bundling
 - [Offering configuration](docs/configuration.md)
 - [Hosted-checkout providers](docs/providers.md)
 - [CSS themes](docs/themes.md)
+- [MVP readiness review](docs/readiness-review.md)
 - [Architecture decisions](docs/adr/)
 - [Implementation issues](https://github.com/bh2smith/contribute/issues)
 
