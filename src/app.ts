@@ -13,7 +13,7 @@ function element<K extends keyof HTMLElementTagNameMap>(tag: K, className: strin
 
 function priceLabel(option: PaymentOption): string {
   const interval = { once: 'One-time contribution', month: 'Every month', year: 'Every year' }[option.billing.interval];
-  if (!option.price) return `Amount chosen at checkout · ${interval}`;
+  if (!option.price) return `See amount at checkout · ${interval}`;
   const formatter = new Intl.NumberFormat('en', { style: 'currency', currency: option.price.currency });
   const digits = formatter.resolvedOptions().maximumFractionDigits ?? 2;
   return `${formatter.format(option.price.amountMinor / 10 ** digits)} · ${interval}`;
