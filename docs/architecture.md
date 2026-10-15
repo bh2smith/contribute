@@ -25,6 +25,8 @@ No application forms for identity or payment information, accounts, cookies, tra
 
 All deliverable assets must work on static hosting. There are no runtime servers, serverless functions, webhooks, or customer databases. Configuration changes require validation and a new static release. Hosting selection and deployment are future work; the repository remains private.
 
+The preferred final deliverable is a single compiled HTML file with CSS and JavaScript included. Maintain the lightweight, fully client-side boundary without runtime CDN dependencies. The current Vite build emits an HTML file plus assets; single-file packaging and recipient hosting/embedding constraints remain release work in #7.
+
 ## Decisions
 
 - [Static-only architecture](adr/0001-static-only.md)

@@ -20,4 +20,5 @@ The static foundation (#1) and configuration validation (#2) are complete. The p
 - No backend, accounts, analytics, customer database, embedded payment fields, webhook processing, or membership administration.
 - No live charges or public deployment are part of this plan.
 - Additional providers and localization can follow the initial MVP when requested.
+- Final handoff should preferably be one compiled HTML file containing its CSS and JavaScript, fully client-side with no runtime CDN dependencies. Single-file packaging is tracked in #7; the current build emits multiple static files.
 - Displayed amounts and intervals must match the provider's configured checkout; the application cannot verify payment completion or enforce subscription state.

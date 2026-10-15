@@ -28,6 +28,7 @@ Edit `src/config/site.ts` to select the catalog and theme. Vite handles bundling
 
 ## Documentation
 
+- [Operator guide: configure, build, and hand off](docs/operator-guide.md)
 - [Implementation plan](PLAN.md)
 - [Architecture](docs/architecture.md)
 - [Offering configuration](docs/configuration.md)
@@ -37,3 +38,5 @@ Edit `src/config/site.ts` to select the catalog and theme. Vite handles bundling
 - [Implementation issues](https://github.com/bh2smith/contribute/issues)
 
 Repository visibility is private. Deployment and any visibility changes require a separate decision.
+
+The intended final handoff is a lightweight, self-contained HTML file. Single-file packaging is tracked in #7; the current build still requires the complete `dist/` directory.
