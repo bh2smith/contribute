@@ -1,6 +1,6 @@
 # Implementation plan
 
-Planning only: implementation begins when separately requested. Issues are the source of truth for progress; milestones have no committed delivery dates.
+Implementation has begun with the static foundation in issue #1. Issues are the source of truth for progress; milestones have no committed delivery dates. Deferred requirements are tracked in issue #7.
 
 ## Milestone 1: Static catalog foundation
 
