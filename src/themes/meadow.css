@@ -1,0 +1,10 @@
+.catalog[data-theme="meadow"] {
+  --catalog-background: #f5f4ee;
+  --catalog-surface: #ffffff;
+  --catalog-text: #20372e;
+  --catalog-muted: #4e6258;
+  --catalog-border: #c3cec7;
+  --catalog-accent: #245c43;
+  --catalog-on-accent: #ffffff;
+  --catalog-focus: #8b4200;
+}
