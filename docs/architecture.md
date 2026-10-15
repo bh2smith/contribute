@@ -12,7 +12,7 @@ The browser loads static assets and public configuration. A visitor selects an o
 
 ## Boundaries
 
-- **Configuration:** offering identifiers, display copy, optional amount/currency and billing interval, provider identifier, and public provider-specific settings. Amount representation and schema will be settled in the configuration issue. Secrets and customer information must never enter configuration or build artifacts.
+- **Configuration:** offering identifiers, display copy, optional price in integer minor currency units, explicit billing interval, provider identifier, and public provider-specific settings. See the [version 1 schema](configuration.md) for validation rules. Secrets and customer information must never enter configuration or build artifacts.
 - **Core:** validated offerings and provider dispatch, independent of Stripe and organization branding.
 - **Providers:** minimal adapter resolving public configuration to a validated checkout URL or an explicit unavailable result. Unknown providers and invalid configuration disable checkout with a useful message. No generic plugin framework is needed initially.
 - **Stripe:** consumes pre-created Payment Link URLs; does not create links, use secret keys, or call payment APIs. Destination validation must use parsed URLs, HTTPS, and explicit accepted host rules, rejecting deceptive hostnames and unsafe schemes.
