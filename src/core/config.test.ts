@@ -27,6 +27,12 @@ function expectIssue(input: unknown, path: string): void {
 const optionPath = '$.offerings[0].options[0]';
 
 describe('catalog configuration', () => {
+  it('accepts English fallback copy but rejects malformed translations', () => {
+    expect(parseCatalogConfig({ ...catalog(), title: { en: 'Community' } }).success).toBe(true);
+    expectIssue({ ...catalog(), title: { de: 'Gemeinschaft' } }, '$.title.en');
+    expectIssue(catalog({ label: { en: 'Annual', de: '' } }), `${optionPath}.label.de`);
+    expectIssue({ ...catalog(), title: { en: 'Community', fr: 'Communauté' } }, '$.title');
+  });
   it('accepts generic membership, donation, and recurring examples', () => {
     expect(parseCatalogConfig(exampleConfig)).toEqual({ success: true, config: exampleConfig });
   });

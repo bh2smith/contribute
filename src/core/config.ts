@@ -1,7 +1,9 @@
+export type LocalizedText = string | { en: string; de?: string };
+
 /** All configuration is public. Amounts use the currency's smallest unit. */
 export interface PaymentOption {
   id: string;
-  label: string;
+  label: LocalizedText;
   price?: { amountMinor: number; currency: string };
   billing: { interval: 'once' | 'month' | 'year' };
   provider: string;
@@ -10,15 +12,15 @@ export interface PaymentOption {
 
 export interface Offering {
   id: string;
-  title: string;
-  description: string;
+  title: LocalizedText;
+  description: LocalizedText;
   kind: 'membership' | 'donation';
   options: PaymentOption[];
 }
 
 export interface CatalogConfig {
   version: 1;
-  title: string;
+  title: LocalizedText;
   offerings: Offering[];
 }
 
@@ -49,6 +51,13 @@ export function parseCatalogConfig(input: unknown): ConfigResult {
     }
     return value;
   };
+  const localized = (value: unknown, path: string): LocalizedText => {
+    if (typeof value === 'string') return string(value, path);
+    const translations = object(value, path, ['en', 'de']);
+    const result: { en: string; de?: string } = { en: string(translations['en'], `${path}.en`) };
+    if ('de' in translations) result.de = string(translations['de'], `${path}.de`);
+    return result;
+  };
   const id = (value: unknown, path: string): string => {
     const result = string(value, path);
     if (!/^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/.test(result)) {
@@ -66,7 +75,7 @@ export function parseCatalogConfig(input: unknown): ConfigResult {
   };
   const root = object(input, '$', ['version', 'title', 'offerings']);
   if (root['version'] !== 1) fail('$.version', 'Expected schema version 1.');
-  const title = string(root['title'], '$.title');
+  const title = localized(root['title'], '$.title');
   const offeringIds = new Set<string>();
   const offerings = array(root['offerings'], '$.offerings').map((value, index): Offering => {
     const path = `$.offerings[${String(index)}]`;
@@ -99,7 +108,7 @@ export function parseCatalogConfig(input: unknown): ConfigResult {
       }
       const result: PaymentOption = {
         id: optionId,
-        label: string(option['label'], `${optionPath}.label`),
+        label: localized(option['label'], `${optionPath}.label`),
         billing: { interval: interval === 'month' || interval === 'year' ? interval : 'once' },
         provider,
         providerConfig: { checkoutUrl },
@@ -119,8 +128,8 @@ export function parseCatalogConfig(input: unknown): ConfigResult {
     if (options.length === 0) fail(`${path}.options`, 'Provide at least one payment option.');
     return {
       id: offeringId,
-      title: string(entry['title'], `${path}.title`),
-      description: string(entry['description'], `${path}.description`),
+      title: localized(entry['title'], `${path}.title`),
+      description: localized(entry['description'], `${path}.description`),
       kind: kind === 'membership' ? 'membership' : 'donation',
       options,
     };

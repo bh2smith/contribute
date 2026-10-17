@@ -17,4 +17,4 @@ To add a theme, create a scoped CSS file, import it in `src/main.ts`, and extend
 
 The grid collapses to one column on narrow screens. Standard links support keyboard navigation and have explicit focus outlines and descriptive accessible names. Unavailable options contain explanatory text and no link. There are no animations or transitions.
 
-For UI changes, briefly check narrow and wide layouts, readable contrast, and keyboard focus in the browser. Do not add a UI behavior-test framework for this simple catalog. Automated tests remain focused on configuration and checkout validation. English/German localization remains tracked in #7.
+For UI changes, briefly check narrow and wide layouts, readable contrast, and keyboard focus in the browser. Do not add a UI behavior-test framework for this simple catalog. Automated tests remain focused on configuration and checkout validation. Both themes support the [English/German language selector](localization.md).
