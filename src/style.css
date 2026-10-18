@@ -1,5 +1,7 @@
 /* The page reset is the only global rule; component styles are scoped. */
-body { margin: 0; }
+body {
+  margin: 0;
+}
 .catalog {
   --catalog-radius: 1.25rem;
   --catalog-font: system-ui, sans-serif;
@@ -10,28 +12,132 @@ body { margin: 0; }
   line-height: 1.6;
   overflow-wrap: anywhere;
 }
-.catalog *, .catalog *::before, .catalog *::after { box-sizing: border-box; }
-.catalog .catalog__container { max-width: 76rem; margin: auto; padding: clamp(1.25rem, 5vw, 4rem); }
-.catalog .catalog__eyebrow { font-size: .8rem; font-weight: 750; letter-spacing: .18em; }
-.catalog .catalog__header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
-.catalog .catalog__language { display: flex; align-items: center; gap: .5rem; font-size: .875rem; }
-.catalog .catalog__language-select { min-height: 2.75rem; padding: .5rem; font: inherit; color: var(--catalog-text); background: var(--catalog-surface); border: 1px solid var(--catalog-border); border-radius: .4rem; }
-.catalog .catalog__language-select:focus-visible { outline: 3px solid var(--catalog-focus); outline-offset: 3px; }
-.catalog .catalog__title { max-width: 18ch; margin: 1.5rem 0; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; letter-spacing: -.04em; }
-.catalog .catalog__intro { max-width: 55ch; color: var(--catalog-muted); font-size: 1.15rem; margin-bottom: 3rem; }
-.catalog .catalog__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 23rem), 1fr)); gap: 1.5rem; }
-.catalog .catalog__card { padding: clamp(1.25rem, 3vw, 2rem); background: var(--catalog-surface); border: 1px solid var(--catalog-border); border-radius: var(--catalog-radius); }
-.catalog .catalog__kind { color: var(--catalog-muted); text-transform: uppercase; font-size: .75rem; font-weight: 700; letter-spacing: .12em; }
-.catalog .catalog__card-title { margin: .5rem 0; font-size: 1.75rem; line-height: 1.25; }
-.catalog .catalog__description, .catalog .catalog__price, .catalog .catalog__reason { color: var(--catalog-muted); }
-.catalog .catalog__options { list-style: none; margin: 1.75rem 0 0; padding: 0; }
-.catalog .catalog__option { padding: 1.25rem 0; border-top: 1px solid var(--catalog-border); }
-.catalog .catalog__option-title { margin: 0; font-size: 1rem; }
-.catalog .catalog__price { margin: .25rem 0 1rem; }
-.catalog .catalog__checkout { display: inline-block; padding: .75rem 1.25rem; border-radius: .5rem; background: var(--catalog-accent); color: var(--catalog-on-accent); font-weight: 650; text-decoration: underline; text-underline-offset: .2em; }
-.catalog .catalog__checkout:hover { text-decoration-thickness: .15em; }
-.catalog .catalog__checkout:focus-visible { outline: 3px solid var(--catalog-focus); outline-offset: 4px; }
-.catalog .catalog__unavailable { display: inline-block; font-weight: 650; }
-.catalog .catalog__reason { font-size: .875rem; margin-bottom: 0; }
-.catalog .catalog__footer, .catalog .catalog__empty { margin-top: 2.5rem; color: var(--catalog-muted); }
+.catalog *,
+.catalog *::before,
+.catalog *::after {
+  box-sizing: border-box;
+}
+.catalog .catalog__container {
+  max-width: 76rem;
+  margin: auto;
+  padding: clamp(1.25rem, 5vw, 4rem);
+}
+.catalog .catalog__eyebrow {
+  font-size: 0.8rem;
+  font-weight: 750;
+  letter-spacing: 0.18em;
+}
+.catalog .catalog__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.catalog .catalog__language {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+.catalog .catalog__language-select {
+  min-height: 2.75rem;
+  padding: 0.5rem;
+  font: inherit;
+  color: var(--catalog-text);
+  background: var(--catalog-surface);
+  border: 1px solid var(--catalog-border);
+  border-radius: 0.4rem;
+}
+.catalog .catalog__language-select:focus-visible {
+  outline: 3px solid var(--catalog-focus);
+  outline-offset: 3px;
+}
+.catalog .catalog__title {
+  max-width: 18ch;
+  margin: 1.5rem 0;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+.catalog .catalog__intro {
+  max-width: 55ch;
+  color: var(--catalog-muted);
+  font-size: 1.15rem;
+  margin-bottom: 3rem;
+}
+.catalog .catalog__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 23rem), 1fr));
+  gap: 1.5rem;
+}
+.catalog .catalog__card {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: var(--catalog-surface);
+  border: 1px solid var(--catalog-border);
+  border-radius: var(--catalog-radius);
+}
+.catalog .catalog__kind {
+  color: var(--catalog-muted);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+.catalog .catalog__card-title {
+  margin: 0.5rem 0;
+  font-size: 1.75rem;
+  line-height: 1.25;
+}
+.catalog .catalog__description,
+.catalog .catalog__price,
+.catalog .catalog__reason {
+  color: var(--catalog-muted);
+}
+.catalog .catalog__options {
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+}
+.catalog .catalog__option {
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--catalog-border);
+}
+.catalog .catalog__option-title {
+  margin: 0;
+  font-size: 1rem;
+}
+.catalog .catalog__price {
+  margin: 0.25rem 0 1rem;
+}
+.catalog .catalog__checkout {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  background: var(--catalog-accent);
+  color: var(--catalog-on-accent);
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.catalog .catalog__checkout:hover {
+  text-decoration-thickness: 0.15em;
+}
+.catalog .catalog__checkout:focus-visible {
+  outline: 3px solid var(--catalog-focus);
+  outline-offset: 4px;
+}
+.catalog .catalog__unavailable {
+  display: inline-block;
+  font-weight: 650;
+}
+.catalog .catalog__reason {
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+.catalog .catalog__footer,
+.catalog .catalog__empty {
+  margin-top: 2.5rem;
+  color: var(--catalog-muted);
+}
 /* No animations or transitions: reduced-motion preferences are respected by default. */

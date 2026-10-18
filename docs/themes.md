@@ -4,14 +4,14 @@ Set `siteTheme` in `src/config/site.ts` to `meadow` (default, light) or `midnigh
 
 `src/style.css` defines the shared layout. Theme files in `src/themes/` set colors through custom properties on `.catalog[data-theme="..."]`. Component selectors are scoped beneath `.catalog`; the only global rule removes the body's margin.
 
-| Token | Purpose |
-| --- | --- |
-| `--catalog-background`, `--catalog-surface` | Page and card backgrounds |
-| `--catalog-text`, `--catalog-muted` | Primary and secondary text |
-| `--catalog-border` | Card boundaries and separators |
-| `--catalog-accent`, `--catalog-on-accent` | Checkout link colors |
-| `--catalog-focus` | Visible keyboard focus outline |
-| `--catalog-font`, `--catalog-radius` | Typography and card corner radius |
+| Token                                       | Purpose                           |
+| ------------------------------------------- | --------------------------------- |
+| `--catalog-background`, `--catalog-surface` | Page and card backgrounds         |
+| `--catalog-text`, `--catalog-muted`         | Primary and secondary text        |
+| `--catalog-border`                          | Card boundaries and separators    |
+| `--catalog-accent`, `--catalog-on-accent`   | Checkout link colors              |
+| `--catalog-focus`                           | Visible keyboard focus outline    |
+| `--catalog-font`, `--catalog-radius`        | Typography and card corner radius |
 
 To add a theme, create a scoped CSS file, import it in `src/main.ts`, and extend the `Theme` union. Keep payment behavior in the provider layer. Configuration text is rendered as plain text, never HTML.
 

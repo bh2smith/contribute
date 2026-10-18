@@ -1,10 +1,10 @@
 export type CheckoutResult =
   | { available: true; url: string }
   | {
-    available: false;
-    reason: 'unsupported-provider' | 'invalid-settings' | 'provider-error';
-    message: string;
-  };
+      available: false;
+      reason: 'unsupported-provider' | 'invalid-settings' | 'provider-error';
+      message: string;
+    };
 
 /** Adapters validate their own public settings and destination host rules. */
 export interface PaymentProvider {

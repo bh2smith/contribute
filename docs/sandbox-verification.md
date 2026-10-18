@@ -6,10 +6,10 @@ Verified 2026-10-18 in the signed-in **deluxtreme sandbox**, with Stripe explici
 
 These public links are test-only fixtures, not consumer pricing or production checkout.
 
-| Offering | Price | Sandbox Payment Link |
-| --- | --- | --- |
-| Annual membership | EUR 60.00 / year | https://buy.stripe.com/test_00w00i9sx2b5g213MGdIA00 |
-| Monthly support | EUR 10.00 / month | https://buy.stripe.com/test_eVq5kCdIN6rl3fffvodIA01 |
+| Offering          | Price                       | Sandbox Payment Link                                |
+| ----------------- | --------------------------- | --------------------------------------------------- |
+| Annual membership | EUR 60.00 / year            | https://buy.stripe.com/test_00w00i9sx2b5g213MGdIA00 |
+| Monthly support   | EUR 10.00 / month           | https://buy.stripe.com/test_eVq5kCdIN6rl3fffvodIA01 |
 | One-time donation | Customer chooses EUR amount | https://buy.stripe.com/test_00w8wOcEJ8zt1774QKdIA02 |
 
 The sandbox initially had no Payment Links. Created two fixed recurring products/prices and one customer-chosen one-time donation link. All three are active. Optional customer name, address, phone, tax collection, free trials, and adjustable quantities were not enabled. Stripe's own checkout may still collect necessary customer/payment information; the catalog does not.
@@ -17,12 +17,12 @@ The sandbox initially had no Payment Links. Created two fixed recurring products
 ## Reproduce
 
 ```sh
-npm ci
-npm run build:sandbox
-npm run preview
+bun install --frozen-lockfile
+bun run build:sandbox
+bun run preview
 ```
 
-`build:sandbox` writes a self-contained `dist/index.html` with an explicit sandbox title and these three test links. CI also publishes this as the `contribute-sandbox-html` artifact. It replaces the current contents of `dist/`. The default `npm run build` continues to use inert placeholder links; rebuild before handing off a normal catalog. No keys, backend, Stripe SDK, or new dependencies are required.
+`build:sandbox` writes a self-contained `dist/index.html` with an explicit sandbox title and these three test links. CI also publishes this as the `contribute-sandbox-html` artifact. It replaces the current contents of `dist/`. The default `bun run build` continues to use inert placeholder links; rebuild before handing off a normal catalog. No keys, backend, Stripe SDK, or new dependencies are required.
 
 ## Observed results
 

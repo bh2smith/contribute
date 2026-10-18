@@ -17,13 +17,18 @@ async function inline(pattern, wrap) {
   }
 }
 
-await inline(/<script\b[^>]*\bsrc="([^"]+)"[^>]*><\/script>/g,
-  (js) => `<script type="module">${js.replace(/<\/script/gi, '<\\/script')}</script>`);
-await inline(/<link\b(?=[^>]*\brel="stylesheet")[^>]*\bhref="([^"]+)"[^>]*>/g,
-  (css) => `<style>${css.replace(/<\/style/gi, '\\3c /style')}</style>`);
+await inline(
+  /<script\b[^>]*\bsrc="([^"]+)"[^>]*><\/script>/g,
+  (js) => `<script type="module">${js.replace(/<\/script/gi, '<\\/script')}</script>`,
+);
+await inline(
+  /<link\b(?=[^>]*\brel="stylesheet")[^>]*\bhref="([^"]+)"[^>]*>/g,
+  (css) => `<style>${css.replace(/<\/style/gi, '\\3c /style')}</style>`,
+);
 
 const files = (await readdir(dist, { recursive: true, withFileTypes: true }))
-  .filter((entry) => entry.isFile()).map((entry) => resolve(entry.parentPath, entry.name));
+  .filter((entry) => entry.isFile())
+  .map((entry) => resolve(entry.parentPath, entry.name));
 if (files.some((path) => path !== index && !inlined.has(path))) {
   throw new Error('Unpackaged assets remain. Inline them before distributing the HTML.');
 }
