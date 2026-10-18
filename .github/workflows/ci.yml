@@ -34,3 +34,10 @@ jobs:
           name: contribute-sandbox-html
           path: dist/index.html
           if-no-files-found: error
+      - name: Build consumer preview
+        run: bun run build:nms-preview
+      - uses: actions/upload-artifact@v4
+        with:
+          name: contribute-nms-preview-html
+          path: dist/index.html
+          if-no-files-found: error
