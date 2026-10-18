@@ -13,6 +13,10 @@ body { margin: 0; }
 .catalog *, .catalog *::before, .catalog *::after { box-sizing: border-box; }
 .catalog .catalog__container { max-width: 76rem; margin: auto; padding: clamp(1.25rem, 5vw, 4rem); }
 .catalog .catalog__eyebrow { font-size: .8rem; font-weight: 750; letter-spacing: .18em; }
+.catalog .catalog__header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
+.catalog .catalog__language { display: flex; align-items: center; gap: .5rem; font-size: .875rem; }
+.catalog .catalog__language-select { min-height: 2.75rem; padding: .5rem; font: inherit; color: var(--catalog-text); background: var(--catalog-surface); border: 1px solid var(--catalog-border); border-radius: .4rem; }
+.catalog .catalog__language-select:focus-visible { outline: 3px solid var(--catalog-focus); outline-offset: 3px; }
 .catalog .catalog__title { max-width: 18ch; margin: 1.5rem 0; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; letter-spacing: -.04em; }
 .catalog .catalog__intro { max-width: 55ch; color: var(--catalog-muted); font-size: 1.15rem; margin-bottom: 3rem; }
 .catalog .catalog__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 23rem), 1fr)); gap: 1.5rem; }

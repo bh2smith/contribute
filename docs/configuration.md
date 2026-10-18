@@ -19,6 +19,8 @@ Unknown fields are rejected at every level. IDs begin with a lowercase letter an
 
 ## Money and billing
 
+Display copy may be a plain string or `{ en: 'English', de: 'Deutsch' }`. English is required; omitted German falls back to English. See [localization](localization.md). ID and provider fields remain plain identifiers.
+
 Amounts use the currency's smallest unit, avoiding decimal arithmetic: EUR 60.00 is `6000`; JPY 6000 is `6000`. Currency validation checks code syntax, not whether the provider supports or recognizes the currency. Operators must verify actual currency, amount, and billing interval against hosted checkout.
 
 Omit the entire `price` object when an amount is selected or disclosed at checkout. Never use zero or an incomplete price as a substitute. Billing remains explicit even when price is omitted. A recurring interval does not create a subscription; the provider's checkout must already be configured accordingly. Membership and donation offerings can each contain one-time or recurring options.

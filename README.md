@@ -34,10 +34,11 @@ Edit `src/config/site.ts` to select the catalog and theme. Vite handles bundling
 - [Offering configuration](docs/configuration.md)
 - [Hosted-checkout providers](docs/providers.md)
 - [CSS themes](docs/themes.md)
+- [English/German localization](docs/localization.md)
 - [MVP readiness review](docs/readiness-review.md)
 - [Architecture decisions](docs/adr/)
 - [Implementation issues](https://github.com/bh2smith/contribute/issues)
 
 Repository visibility is private. Deployment and any visibility changes require a separate decision.
 
-The handoff is `dist/index.html` (approximately 11 KB with the starter configuration). CI publishes it as the `contribute-html` artifact. No runtime CDN or package installation is required; checkout still needs internet access.
+The handoff is `dist/index.html` (approximately 14 KB with the bilingual starter configuration). CI publishes it as the `contribute-html` artifact. No runtime CDN or package installation is required; checkout still needs internet access.
