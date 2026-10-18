@@ -13,7 +13,7 @@ bun install --frozen-lockfile
 bun run dev
 ```
 
-Run `bun run check` before submitting changes. It checks Prettier formatting, strict TypeScript types, type-aware ESLint with zero warnings allowed, Vitest validation tests, and the production build. Run `bun run format` to apply formatting before committing. Use `bun run test` to run the existing Vitest suite. CI runs the same checks on pull requests and pushes to main. The lockfile is committed for reproducible installs. The development server binds to localhost.
+Run `bun run check` before submitting changes. It checks Prettier formatting, strict TypeScript types, type-aware ESLint with zero warnings allowed, Vitest validation tests, and the production build. Run `bun fmt` to apply formatting before committing. Use `bun run test` to run the existing Vitest suite. CI runs the same checks on pull requests and pushes to main. The lockfile is committed for reproducible installs. The development server binds to localhost.
 
 `bun run build` emits one self-contained `dist/index.html` with CSS and JavaScript included; `bun run preview` previews it locally. Open the HTML directly in a modern browser or serve it on static hosting. There are no runtime dependencies or backend services. Build-time environment values are public if bundled; never add secrets.
 
