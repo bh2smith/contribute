@@ -19,7 +19,7 @@ Reviewed 2026-10-15 for issue #6. This is a lightweight review of the static cat
 
 ## Sandbox check to perform with real links
 
-An actual account-owned sandbox Payment Link was not verified in this review: Stripe account tools were not exposed to this task. The synthetic URL above proves local rendering only, not checkout availability. Real-link verification remains release work in #7.
+At the original review, an actual account-owned sandbox Payment Link was not available. The synthetic URL above proved local rendering only. This gap was subsequently addressed on 2026-10-18; see [sandbox verification](sandbox-verification.md) for the actual links, observed checkout results, and remaining limits.
 
 1. Obtain an existing sandbox link for each intended one-time and recurring offering; confirm the sandbox/account before use.
 2. Select those links in a temporary consumer configuration and build the catalog.

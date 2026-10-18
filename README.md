@@ -36,6 +36,7 @@ Edit `src/config/site.ts` to select the catalog and theme. Vite handles bundling
 - [CSS themes](docs/themes.md)
 - [English/German localization](docs/localization.md)
 - [MVP readiness review](docs/readiness-review.md)
+- [Stripe sandbox links and verification](docs/sandbox-verification.md)
 - [Architecture decisions](docs/adr/)
 - [Implementation issues](https://github.com/bh2smith/contribute/issues)
 
