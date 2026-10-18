@@ -4,10 +4,17 @@ export function parseCheckoutUrl(value: unknown): URL | undefined {
   try {
     const url = new URL(value);
     if (
-      url.protocol !== 'https:' || url.username || url.password || url.port ||
-      url.search || url.hash || value.includes('?') || value.includes('#') ||
+      url.protocol !== 'https:' ||
+      url.username ||
+      url.password ||
+      url.port ||
+      url.search ||
+      url.hash ||
+      value.includes('?') ||
+      value.includes('#') ||
       url.href !== value
-    ) return undefined;
+    )
+      return undefined;
     return url;
   } catch {
     return undefined;

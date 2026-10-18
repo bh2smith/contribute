@@ -1,6 +1,6 @@
 # Implementation plan
 
-The static foundation (#1) and configuration validation (#2) are complete. The provider layer (#3) is complete; catalog rendering and themes (#4) are the current increment. Issues are the source of truth for progress; milestones have no committed delivery dates. Deferred requirements are tracked in issue #7.
+The static foundation (#1) and configuration validation (#2) are complete. The provider layer (#3) is complete; catalog rendering and themes (#4) are the current increment. Issues are the source of truth for progress; milestones have no committed delivery dates. The #7 tracker is complete; remaining consumer content, handoff, and production checkout work is tracked in #19, #20, and #21.
 
 ## Milestone 1: Static catalog foundation
 
@@ -20,5 +20,5 @@ The static foundation (#1) and configuration validation (#2) are complete. The p
 - No backend, accounts, analytics, customer database, embedded payment fields, webhook processing, or membership administration.
 - No live charges or public deployment are part of this plan.
 - Additional providers and localization can follow the initial MVP when requested.
-- Final handoff is one compiled HTML file containing its CSS and JavaScript, fully client-side with no runtime CDN dependencies. Recipient hosting/embedding constraints remain tracked in #7.
+- Final handoff is one compiled HTML file containing its CSS and JavaScript, fully client-side with no runtime CDN dependencies. Recipient hosting/embedding constraints remain tracked in #20.
 - Displayed amounts and intervals must match the provider's configured checkout; the application cannot verify payment completion or enforce subscription state.

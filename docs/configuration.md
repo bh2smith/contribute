@@ -6,14 +6,14 @@ The schema and parser have no runtime dependencies. The UI validates the catalog
 
 ## Fields
 
-| Object | Fields |
-| --- | --- |
-| Catalog | `version: 1`, non-empty `title`, `offerings` array (may be empty) |
-| Offering | `id`, non-empty `title` and `description`, `kind: membership or donation`, non-empty `options` array |
-| Payment option | `id`, non-empty `label`, optional `price`, `billing`, `provider`, `providerConfig` |
-| Price | Positive safe integer `amountMinor`, uppercase three-letter `currency` |
-| Billing | `interval: once, month, or year` |
-| Provider settings | `checkoutUrl`: absolute HTTPS URL without credentials, query parameters, or fragments |
+| Object            | Fields                                                                                               |
+| ----------------- | ---------------------------------------------------------------------------------------------------- |
+| Catalog           | `version: 1`, non-empty `title`, `offerings` array (may be empty)                                    |
+| Offering          | `id`, non-empty `title` and `description`, `kind: membership or donation`, non-empty `options` array |
+| Payment option    | `id`, non-empty `label`, optional `price`, `billing`, `provider`, `providerConfig`                   |
+| Price             | Positive safe integer `amountMinor`, uppercase three-letter `currency`                               |
+| Billing           | `interval: once, month, or year`                                                                     |
+| Provider settings | `checkoutUrl`: absolute HTTPS URL without credentials, query parameters, or fragments                |
 
 Unknown fields are rejected at every level. IDs begin with a lowercase letter and use lowercase letters, digits, and single hyphens between segments. Offering IDs are unique across the catalog; option IDs are unique within their offering. Use `(offering.id, option.id)` as the stable option identity. IDs should remain unchanged when display copy is translated or edited.
 

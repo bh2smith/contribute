@@ -6,16 +6,16 @@ A generic, client-side, configuration-driven application for presenting membersh
 
 ## Development
 
-Use Node.js 24 (`nvm use`) and npm.
+Use Node.js 24 (`nvm use`) and Bun 1.4.2 (pinned in `package.json`). Bun manages dependencies and runs package scripts; the build tools and packaging script use Node. Commit `bun.lock` and use frozen installs to reproduce the dependency versions.
 
 ```sh
-npm ci
-npm run dev
+bun install --frozen-lockfile
+bun run dev
 ```
 
-Run `npm run check` before submitting changes. It runs strict TypeScript checks, type-aware ESLint with zero warnings allowed, Vitest tests, and a production build. CI runs the same checks on pull requests and pushes to main. The lockfile is committed for reproducible installs. The development server binds to localhost.
+Run `bun run check` before submitting changes. It checks Prettier formatting, strict TypeScript types, type-aware ESLint with zero warnings allowed, Vitest validation tests, and the production build. Run `bun run format` to apply formatting before committing. Use `bun run test` to run the existing Vitest suite. CI runs the same checks on pull requests and pushes to main. The lockfile is committed for reproducible installs. The development server binds to localhost.
 
-`npm run build` emits one self-contained `dist/index.html` with CSS and JavaScript included; `npm run preview` previews it locally. Open the HTML directly in a modern browser or serve it on static hosting. There are no runtime dependencies or backend services. Build-time environment values are public if bundled; never add secrets.
+`bun run build` emits one self-contained `dist/index.html` with CSS and JavaScript included; `bun run preview` previews it locally. Open the HTML directly in a modern browser or serve it on static hosting. There are no runtime dependencies or backend services. Build-time environment values are public if bundled; never add secrets.
 
 Edit `src/config/site.ts` to select the catalog and theme. Vite handles bundling, TypeScript enforces strict types, and ESLint checks unsafe operations and unhandled promises. Vitest covers configuration and checkout URL validation only; UI changes receive a brief manual browser check, without a UI behavior-test framework. There is no UI framework or personal-data form.
 

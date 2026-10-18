@@ -15,9 +15,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
-          cache: npm
-      - run: npm ci
-      - run: npm run check
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bun run check
       - name: Verify single-file deliverable
         run: |
           test -f dist/index.html
@@ -28,7 +28,7 @@ jobs:
           path: dist/index.html
           if-no-files-found: error
       - name: Build sandbox catalog
-        run: npm run build:sandbox
+        run: bun run build:sandbox
       - uses: actions/upload-artifact@v4
         with:
           name: contribute-sandbox-html

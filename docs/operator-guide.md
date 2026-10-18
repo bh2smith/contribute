@@ -24,12 +24,12 @@ Stripe handles checkout, recurring billing, receipts, and payment status. Member
 
 ## Build and review
 
-With Node.js 24 and npm installed on the build machine:
+With Node.js 24 and the Bun version pinned in `package.json` installed on the build machine:
 
 ```sh
-npm ci
-npm run check
-npm run preview
+bun install --frozen-lockfile
+bun run check
+bun run preview
 ```
 
 The check command runs strict type checking, linting, focused configuration/provider validation tests, and the production build. Open the local address printed by the preview command. Briefly review the configured text, mobile and desktop layout, keyboard focus, and the intended test-mode destinations. There is no UI behavior-test framework. Creating production links or performing live charges is separate release work.

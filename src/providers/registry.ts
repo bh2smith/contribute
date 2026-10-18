@@ -16,7 +16,11 @@ export function createCheckoutResolver(providers: readonly PaymentProvider[]) {
   return (option: Pick<PaymentOption, 'provider' | 'providerConfig'>): CheckoutResult => {
     const provider = registry.get(option.provider);
     if (!provider) {
-      return { available: false, reason: 'unsupported-provider', message: 'This payment provider is not available.' };
+      return {
+        available: false,
+        reason: 'unsupported-provider',
+        message: 'This payment provider is not available.',
+      };
     }
     try {
       const result = provider.resolveCheckout(option.providerConfig);
@@ -24,7 +28,11 @@ export function createCheckoutResolver(providers: readonly PaymentProvider[]) {
       if (result.available && !parseCheckoutUrl(result.url)) return invalidSettings();
       return result;
     } catch {
-      return { available: false, reason: 'provider-error', message: 'This checkout option is temporarily unavailable.' };
+      return {
+        available: false,
+        reason: 'provider-error',
+        message: 'This checkout option is temporarily unavailable.',
+      };
     }
   };
 }
