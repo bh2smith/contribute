@@ -18,9 +18,9 @@ bun run build:nms-sandbox
 bun run preview
 ```
 
-This also produces one `dist/index.html`, explicitly labelled as a sandbox with no real payments. Only the one-time donation is enabled, using the operator's Stripe test link. Membership options remain unavailable because the generic sandbox recurring prices do not match the consumer's prices. For recurring checkout testing, use `bun run build:sandbox` instead.
+This also produces one `dist/index.html`, explicitly labelled as a sandbox with no real payments. All seven membership options and the one-time donation are enabled, using the operator's Stripe test links. Membership test prices match the amounts and monthly/annual intervals in the preview. These are separate from the generic sandbox fixtures.
 
-Open the donation checkout, choose an amount, and verify Stripe shows test mode. Use only Stripe's documented test payment details, never real card information. See [sandbox verification](../../docs/sandbox-verification.md) for links and scope. This demo does not activate membership or confirm payments in the catalog.
+Open a checkout and verify Stripe shows Sandbox and the expected price and billing interval. For donations, choose an amount. Use only Stripe's documented test payment details, never real card information. See [sandbox verification](../../docs/sandbox-verification.md) for links and scope. This demo does not activate membership or confirm payments in the catalog.
 
 ## Content basis
 
