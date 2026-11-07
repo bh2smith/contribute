@@ -2,10 +2,12 @@ import { exampleConfig } from './example';
 import type { CatalogConfig } from '../core/config';
 
 // Public test-only Payment Links, created in the operator's Stripe sandbox.
+export const sandboxDonationUrl = 'https://buy.stripe.com/test_00w8wOcEJ8zt1774QKdIA02';
+
 const links: Record<string, string> = {
   'membership/annual': 'https://buy.stripe.com/test_00w00i9sx2b5g213MGdIA00',
   'donation/monthly': 'https://buy.stripe.com/test_eVq5kCdIN6rl3fffvodIA01',
-  'donation/one-time': 'https://buy.stripe.com/test_00w8wOcEJ8zt1774QKdIA02',
+  'donation/one-time': sandboxDonationUrl,
 };
 
 export function createSandboxConfig(): CatalogConfig {

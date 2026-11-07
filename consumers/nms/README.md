@@ -11,6 +11,17 @@ bun run preview
 
 The result is one `dist/index.html` labelled as a draft. This command replaces the previous build in `dist/`; run `bun run build` to restore the generic catalog. All eight checkout destinations use unsupported `example.com` placeholders and remain non-clickable. The generic sandbox prices are not used as consumer payment links.
 
+## Sandbox demonstration
+
+```sh
+bun run build:nms-sandbox
+bun run preview
+```
+
+This also produces one `dist/index.html`, explicitly labelled as a sandbox with no real payments. Only the one-time donation is enabled, using the operator's Stripe test link. Membership options remain unavailable because the generic sandbox recurring prices do not match the consumer's prices. For recurring checkout testing, use `bun run build:sandbox` instead.
+
+Open the donation checkout, choose an amount, and verify Stripe shows test mode. Use only Stripe's documented test payment details, never real card information. See [sandbox verification](../../docs/sandbox-verification.md) for links and scope. This demo does not activate membership or confirm payments in the catalog.
+
 ## Content basis
 
 The published [membership application](https://www.nelson-mandela-schule.net/en/friends-of-nms/membership-application.html), checked 2026-10-18, is the source for tier names, prices, and summarized benefits. English copy is shortened for the cards; German copy is a draft translation. The pricing direction was confirmed in the implementation conversation. No logos or official design assets have been copied.
