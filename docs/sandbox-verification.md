@@ -26,6 +26,10 @@ bun run preview
 
 ## Observed results
 
+On 2026-11-07, the consumer sandbox build's donation button was also manually checked: it opened the existing one-time donation checkout, displaying **deluxtreme sandbox**, **Sandbox**, and the editable EUR amount. No payment was submitted. Build it with `bun run build:nms-sandbox`; membership links remain unavailable because the generic recurring fixtures have different prices. CI publishes `contribute-nms-sandbox-html` separately.
+
+To try a successful card payment yourself, select card payment and use `4242 4242 4242 4242`, a future expiry such as `12/34`, and CVC `123`. Use test details for other fields and leave saving payment information unchecked. Confirm the page shows Sandbox before submitting. These are [Stripe's documented test values](https://docs.stripe.com/testing); never enter real card details. A Stripe confirmation is only a simulated payment, and the catalog does not display payment status or activate a membership.
+
 - Navigated from each link in the compiled catalog to its actual Stripe-hosted checkout.
 - Annual checkout showed the intended sandbox merchant, EUR 60.00 per year, and “EUR 5.00 / month billed annually.” Stripe's read-only order summary reported EUR 6000 minor units and `livemode: false`.
 - Monthly checkout showed EUR 10.00 per month. Stripe's order summary reported EUR 1000 minor units and `livemode: false`.
