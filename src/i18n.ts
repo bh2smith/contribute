@@ -16,7 +16,8 @@ export const messages = {
     month: 'Every month',
     year: 'Every year',
     empty: 'We’re getting ready. Offerings will appear here once configured.',
-    footer: 'Available options take you to an external checkout to complete your contribution.',
+    checkoutNotice:
+      'Available options take you to an external checkout to complete your contribution.',
     reasons: {
       'unsupported-provider': 'This payment provider is not available.',
       'invalid-settings': 'Checkout is unavailable because its payment link is not supported.',
@@ -39,7 +40,7 @@ export const messages = {
     month: 'Monatlich',
     year: 'Jährlich',
     empty: 'Wir bereiten alles vor. Die Angebote erscheinen hier, sobald sie eingerichtet sind.',
-    footer:
+    checkoutNotice:
       'Verfügbare Angebote führen zu einer externen Zahlungsseite, auf der du deinen Beitrag abschließen kannst.',
     reasons: {
       'unsupported-provider': 'Dieser Zahlungsanbieter ist nicht verfügbar.',

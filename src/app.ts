@@ -61,6 +61,7 @@ export function mountApp(
   container.append(
     element('h1', 'catalog__title', translate(parsed.config.title, locale)),
     element('p', 'catalog__intro', copy.intro),
+    element('p', 'catalog__checkout-notice', copy.checkoutNotice),
   );
   const grid = element('div', 'catalog__grid');
   for (const offering of parsed.config.offerings) {
@@ -105,7 +106,6 @@ export function mountApp(
     container.append(element('p', 'catalog__empty', copy.empty));
   } else {
     container.append(grid);
-    container.append(element('p', 'catalog__footer', copy.footer));
   }
   root.replaceChildren(main);
 }
