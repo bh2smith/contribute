@@ -64,7 +64,12 @@ body {
   max-width: 55ch;
   color: var(--catalog-muted);
   font-size: 1.15rem;
-  margin-bottom: 3rem;
+  margin-bottom: 0.75rem;
+}
+.catalog .catalog__checkout-notice {
+  max-width: 65ch;
+  margin: 0 0 3rem;
+  color: var(--catalog-muted);
 }
 .catalog .catalog__grid {
   display: grid;
@@ -135,7 +140,6 @@ body {
   font-size: 0.875rem;
   margin-bottom: 0;
 }
-.catalog .catalog__footer,
 .catalog .catalog__empty {
   margin-top: 2.5rem;
   color: var(--catalog-muted);
